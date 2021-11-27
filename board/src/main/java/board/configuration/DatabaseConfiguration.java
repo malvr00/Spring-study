@@ -18,7 +18,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @PropertySource("classpath:/application.properties")	// 설정파일 사용할 수 있게해줌. 추가해서 다른것도 사용가능. @PropertySource
 public class DatabaseConfiguration {
 	
-	@Autowired
+	@Autowired // 해당 변수 및 메서드에 스프링이 관리하는 Bean을 자동으로 매핑
 	private ApplicationContext applicationContext;
 	
 	@Bean	//application.properties에 설정했던 데이터베이스 관련 정보를 사용하도록 지정합니다.
