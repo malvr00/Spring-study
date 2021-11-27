@@ -45,12 +45,22 @@ public class DatabaseConfiguration {
 		// 매퍼 : 애플리케이션에서 사용할 SQL을 담고있는 XML 파일을 의미
 		// 매퍼 단일 선택해서 사용가능. 현제는 전체 선택해서 쓰고 있음.
 		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:/mapper/**/sql-*/xml"));
-		
+		sqlSessionFactoryBean.setConfiguration(mybatisConfig());
 		return sqlSessionFactoryBean.getObject();
 	}
 	
 	@Bean
 	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
+		// SqlSession을 구현하고 코드에서 SqlSession를 대체하는 역할을 한다. SqlSessionTemplate 은 쓰레드에 안전하고 여러개의 DAO나 매퍼에서 공유할수 있다.
 		return new SqlSessionTemplate(sqlSessionFactory);
+	}
+	
+	@Bean
+	// application.properties의 설정 중 마이바티스에 관련된 설정을 가져옴
+	// mybatis.configuration.map-underscore-to-camel-case=true << application.properties 설정 추가한 내용
+	@ConfigurationProperties(prefix="mybatis.configuration")
+	public org.apache.ibatis.session.Configuration mybatisConfig(){
+		// 가져온 마이바티스 설정을 자바 클래스로 만들어서 반환.
+		return new org.apache.ibatis.session.Configuration();
 	}
 }
