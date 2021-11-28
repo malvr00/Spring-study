@@ -9,4 +9,6 @@ use : 마이베티스, 히카리CP<br/>
 <br/>
 ---
 [O] DB 연결<br/>
+[X] REST API
+
 [X] 게시판 생성
