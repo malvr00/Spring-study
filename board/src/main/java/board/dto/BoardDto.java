@@ -3,7 +3,7 @@ package board.dto;
 import java.time.LocalDateTime;
 import lombok.Data;
 
-//getter와 setter를 생성하고 toString, hashCode, equals 메소드 생성
+// getter와 setter를 생성하고 toString, hashCode, equals 메소드 생성
 // 단 setter의 경우 final선언되지 않은 필드에만 적용
 @Data	
 public class BoardDto {
