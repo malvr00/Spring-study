@@ -44,7 +44,7 @@ public class DatabaseConfiguration {
 		// 매퍼 파일의 위치를 설정.
 		// 매퍼 : 애플리케이션에서 사용할 SQL을 담고있는 XML 파일을 의미
 		// 매퍼 단일 선택해서 사용가능. 현제는 전체 선택해서 쓰고 있음.
-		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:/mapper/**/sql-*/xml"));
+		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:/mapper/**/sql-*.xml"));
 		sqlSessionFactoryBean.setConfiguration(mybatisConfig());
 		return sqlSessionFactoryBean.getObject();
 	}
