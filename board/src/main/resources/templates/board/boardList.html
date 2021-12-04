@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="EUC-KR">
+	<meta charset="UTF-8">
 	<title>board</title>
 	<link rel="stylesheet" th:href="@{/css/style.css}"></link>
 </head>
 <body>
 	<div class="container">
-		<h2>°Ô½ÃÆÇ ¸ñ·Ï</h2>
+		<h2>ê²Œì‹œíŒ ëª©ë¡</h2>
 		<table class="board_list">
 			<colgroup>
 				<col width="15%"/>
@@ -17,10 +17,10 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th scope="col">±Û¹øÈ£</th>
-					<th scope="col">Á¦¸ñ</th>
-					<th scope="col">Á¶È¸¼ö</th>
-					<th scope="col">ÀÛ¼ºÀÏ</th>
+					<th scope="col">ê¸€ë²ˆí˜¸</th>
+					<th scope="col">ì œëª©</th>
+					<th scope="col">ì¡°íšŒìˆ˜</th>
+					<th scope="col">ìž‘ì„±ì¼</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -31,11 +31,11 @@
 					<td th:text="${#temporals.format(list.createdDatetime, 'yyyy-MM-dd HH:mm:ss')}"></td>
 				</tr>
 				<tr th:unless="${#lists.size(list)} >0">
-					<td colspan="4">Á¶È¸µÈ °á°ú°¡ ¾ø½À´Ï´Ù.</td>
+					<td colspan="4">ì¡°íšŒëœ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</td>
 				</tr>
 			</tbody>
 		</table>
-		<a href="/board/openBoardWrite.do" class="btn">±Û¾²±â</a>
+		<a href="/board/openBoardWrite.do" class="btn">ê¸€ì“°ê¸°</a>
 	</div>
 </body>
 </html>
