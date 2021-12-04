@@ -8,4 +8,6 @@ import board.board.dto.BoardDto;
 public interface BoardMapper {
 	List<BoardDto> selectBoardList() throws Exception; // 인터페이스이기 때문에 메서드의 이름과 반화 형식만 지정.
 	void insertBoard(BoardDto board) throws Exception;
+	void updateHitCount(int boardIdx) throws Exception;
+	BoardDto selectBoardDetail(int boardIdx) throws Exception;
 }

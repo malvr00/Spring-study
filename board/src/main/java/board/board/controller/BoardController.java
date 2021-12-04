@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller	// 스프링 MVC의 컨트롤러 의미, 해당 클래스를 컨트롤러로 동작하게 함
 public class BoardController {
@@ -40,5 +41,16 @@ public class BoardController {
 	public String insertBoard(BoardDto board) throws Exception{
 		boardService.insertBoard(board);
 		return "redirect:/board/openBoardList.do";
+	}
+	
+	@RequestMapping("/board/openBoardDetail.do")
+	public ModelAndView openBoardDetail(@RequestParam int boardIdx) throws Exception{
+		// @RequestParam는 Get Parameter 에 전송된 변수 값 가져옴
+		ModelAndView mv = new ModelAndView("/board/boardDetail");
+		
+		BoardDto board = boardService.selectBoardDetail(boardIdx);
+		mv.addObject("board", board);
+		
+		return mv;
 	}
 }
