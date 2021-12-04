@@ -3,6 +3,8 @@ package board.board.controller;
 import java.util.List;
 
 import board.board.dto.BoardDto;
+import board.board.service.BoardService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +22,7 @@ public class BoardController {
 	@RequestMapping("/board/openBoardList.do")
 	public ModelAndView openBoardList() throws Exception{
 		// ModelAndView <-- 호출된 요청의 결과를 보여 줄 뷰를 지정.
-		ModelAndView mv = new ModelAndView("/board/boardList"); // 보여줄 View 지정
+		ModelAndView mv = new ModelAndView("/board/boardList"); // 보여줄 View 지정	// resources -> templates -> board
 		
 		List<BoardDto> list = boardService.selectBoardList(); // 게시글 목록을 조회하는 메소드 호출
 		mv.addObject("list", list);	// 로직의 결과를 key = list, value = list 지정하여 저장

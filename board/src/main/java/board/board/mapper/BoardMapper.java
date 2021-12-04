@@ -4,7 +4,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import board.board.dto.BoardDto;
 
-@Mapper
-public class BoardMapper {
-	List<BoardMapper> selectBoardList() throws Exception;
+@Mapper	// 마이바티스의 매퍼 인터페이스 선언
+public interface BoardMapper {
+	List<BoardDto> selectBoardList() throws Exception; // 인터페이스이기 때문에 메서드의 이름과 반화 형식만 지정.
 }
