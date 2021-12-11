@@ -11,7 +11,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 @Service	// 해당 클래스가 스프링 MVC의 서비스임을 나타냄
-@Transactional	// 인터페이스나 클래스, 메서드에 사용할 수 있다. 어노베이션이 적용된 대상은 설정된 태ㅡ랜잭션 빈에 의해서 트랜잭션이 처리됌.
+//@Transactional	// 인터페이스나 클래스, 메서드에 사용할 수 있다. 어노베이션이 적용된 대상은 설정된 트랜잭션 빈에 의해서 트랜잭션이 처리됌.
+					// 트DatabaseConfiguration.java 에서 설정한 EnableTransactionManagement ( 트랜잭션매니저 ) 가 적용됌.
 public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
@@ -32,7 +33,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public BoardDto selectBoardDetail(int boardIdx) throws Exception {
 		boardMapper.updateHitCount(boardIdx);	//  조회수 증가
-		
+		int i = 10 / 0;
 		BoardDto board = boardMapper.selectBoardDetail(boardIdx);	// 게시글 내용 조회
 		
 		return board;

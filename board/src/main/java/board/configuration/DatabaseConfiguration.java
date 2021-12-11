@@ -19,7 +19,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @PropertySource("classpath:/application.properties")	// 설정파일 사용할 수 있게해줌. 추가해서 다른것도 사용가능. @PropertySource
-@EnableTransactionManagement	// 트랜잭션 활성화
+//@EnableTransactionManagement	// 트랜잭션 활성화 ( 스프링이 제공하는 트랜잭션매니저 )
 public class DatabaseConfiguration {
 	
 	@Autowired // 해당 변수 및 메서드에 스프링이 관리하는 Bean을 자동으로 매핑
