@@ -5,10 +5,13 @@ Spring Framwork &amp; Spring - boot - gradle<br/>
 Java : 1.8 <br/>
 DB - Mysql 5.7<br/>
 program : eclips<br/>
-use : 마이베티스, 히카리CP<br/>
+use : 마이베티스, 히카리CP, Jenkins, Swagger<br/>
 <br/>
 ---
 [O] DB 연결<br/>
 [X] REST API
+[X] 배포
+[X] Jenkins
+[X] Swagger
 
-[X] 게시판 생성
+[O] 게시판 생성
