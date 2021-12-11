@@ -8,7 +8,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 @Service	// 해당 클래스가 스프링 MVC의 서비스임을 나타냄
+@Transactional	// 인터페이스나 클래스, 메서드에 사용할 수 있다. 어노베이션이 적용된 대상은 설정된 태ㅡ랜잭션 빈에 의해서 트랜잭션이 처리됌.
 public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
