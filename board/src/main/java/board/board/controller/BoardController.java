@@ -12,13 +12,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.RequestParam;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j		// 어노베이션을 사용하면 로거를 따로 생성할 필요가 없음.
 @Controller	// 스프링 MVC의 컨트롤러 의미, 해당 클래스를 컨트롤러로 동작하게 함
 public class BoardController {
 	@Autowired	// 해당 변수 및 메서드에 스프링이 관리하는 Bean을 자동으로 매핑
 	private BoardService boardService;	// 비즈니스 로직을 처리하는 서비스 빈을 연결
 	
-	private Logger log = LoggerFactory.getLogger(this.getClass());
+//	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	// 어노테이션의 값으로 주소를 지정
 	// /board/openBoardList.do라는 주소를 호출하면 스프링 디스패처는 호출된 주소와
