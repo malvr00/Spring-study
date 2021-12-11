@@ -5,6 +5,8 @@ import java.util.List;
 import board.board.dto.BoardDto;
 import board.board.service.BoardService;
 
+import org.slf4j.Logger;	// slf4j 로거 사용
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +18,15 @@ public class BoardController {
 	@Autowired	// 해당 변수 및 메서드에 스프링이 관리하는 Bean을 자동으로 매핑
 	private BoardService boardService;	// 비즈니스 로직을 처리하는 서비스 빈을 연결
 	
+	private Logger log = LoggerFactory.getLogger(this.getClass());
+	
 	// 어노테이션의 값으로 주소를 지정
 	// /board/openBoardList.do라는 주소를 호출하면 스프링 디스패처는 호출된 주소와
 	// @RequestMappin 어노테이션의 값이 동일한 메서드를 찾아 실행
 	// 즉 클라이언트에서 호출한 주소와 그것을 수행할 메서드를 연결
 	@RequestMapping("/board/openBoardList.do")
 	public ModelAndView openBoardList() throws Exception{
+		log.debug("openBoardList");
 		// ModelAndView <-- 호출된 요청의 결과를 보여 줄 뷰를 지정.
 		ModelAndView mv = new ModelAndView("/board/boardList"); // 보여줄 View 지정	// resources -> templates -> board
 		
