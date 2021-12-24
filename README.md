@@ -1,5 +1,5 @@
 # Spring-study
-REST API 연습 & spring boot 파악하기.
+REST API 연습 & spring boot 파악하기 및 여러 라이브러리 적용 테스트
 
 Spring Framwork &amp; Spring - boot - gradle<br/>
 Java : 1.8 <br/>
