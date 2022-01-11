@@ -1,4 +1,4 @@
-# Spring-study
+# Spring-Boot-study
 spring boot 파악하기 및 여러 라이브러리 적용 테스트
 
 Spring Framwork &amp; Spring - boot - gradle<br/>
