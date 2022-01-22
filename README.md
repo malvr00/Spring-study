@@ -1,5 +1,5 @@
 # Spring-Boot-study
-spring boot 파악하기 및 여러 라이브러리 적용 테스트
+spring boot CRUD 테스트
 
 Spring Framwork &amp; Spring - boot - gradle<br/>
 Java : 1.8 <br/>
